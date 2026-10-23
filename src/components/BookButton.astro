@@ -1,5 +1,5 @@
 ---
-import { BOOK_CALL } from "../consts";
+import { BOOK_CALL, QUALIFY_HREF } from "../consts";
 
 // Booking CTA from the 1b layout: opens the booking widget directly (UTM /
 // click-id params are appended by scripts/utm.ts). Two-line by default —
@@ -17,7 +17,7 @@ const {
 ---
 
 <a
-  href={BOOK_CALL}
+  href={QUALIFY_HREF}
   class:list={[
     "btn btn-primary",
     note

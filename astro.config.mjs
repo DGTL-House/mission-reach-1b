@@ -3,7 +3,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
-// DGTL House — Mission Growth landing (mission-growth-1a).
+// DGTL House — Mission Reach landing (mission-reach-1b).
 // Scaffolded from nonprofit-next: static output, Tailwind v4 via the Vite
 // plugin, stylesheet inlined into the page.
 //
@@ -11,7 +11,7 @@ import sitemap from "@astrojs/sitemap";
 // SITE_URL overrides it (e.g. for a preview domain); the default is the
 // production domain. https, not http: Vercel serves the site over TLS, and an
 // http canonical would point crawlers at a redirect.
-const site = process.env.SITE_URL ?? "https://mission-growth.dgtl-house.com";
+const site = process.env.SITE_URL ?? "https://mission-reach.dgtl-house.com";
 
 export default defineConfig({
   site,

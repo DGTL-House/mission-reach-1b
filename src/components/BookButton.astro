@@ -1,0 +1,39 @@
+---
+import { BOOK_CALL } from "../consts";
+
+// Booking CTA from the 1b layout: opens the booking widget directly (UTM /
+// click-id params are appended by scripts/utm.ts). Two-line by default —
+// "<label>" over "No commitment · 30 min".
+interface Props {
+  label?: string;
+  note?: boolean;
+  class?: string;
+}
+const {
+  label = "Book free consultation",
+  note = true,
+  class: className = "",
+} = Astro.props;
+---
+
+<a
+  href={BOOK_CALL}
+  class:list={[
+    "btn btn-primary",
+    note
+      ? "h-16 flex-col gap-0.5 px-8 leading-tight xl:h-[72px]"
+      : "h-14 px-8 text-[18px] xl:h-[72px]",
+    className,
+  ]}
+>
+  {
+    note ? (
+      <>
+        <span class="text-[17px] xl:text-[18px]">{label}</span>
+        <span class="text-[12px] font-normal">No commitment · 30 min</span>
+      </>
+    ) : (
+      label
+    )
+  }
+</a>

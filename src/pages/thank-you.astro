@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Icon from "../components/Icon.astro";
-import { QUALIFY_HREF } from "../consts";
 
 // Booking-widget redirect target. The widget can pass the appointment start
 // as a query param; without one the date chip is simply left out.
@@ -22,13 +21,7 @@ const next = [
 
 <Layout title="Your meeting is confirmed | DGTL House" noindex>
   <span id="top" aria-hidden="true"></span>
-  <Header base="/">
-    <a
-      slot="cta"
-      href={`/${QUALIFY_HREF}`}
-      class="btn btn-primary h-12 px-5 text-[16px]">Book free call</a
-    >
-  </Header>
+  <Header base="/" />
 
   <main id="main-content" class="pt-2 xl:pt-[67px]">
     <div class="container-page">
@@ -110,7 +103,7 @@ const next = [
     </div>
   </main>
 
-  <Footer variant="thanks" base="/" />
+  <Footer />
 </Layout>
 
 <script>

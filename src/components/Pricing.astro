@@ -1,5 +1,5 @@
 ---
-import { QUALIFY_HREF, QUALIFY_LABEL } from "../consts";
+import BookButton from "./BookButton.astro";
 import Icon from "./Icon.astro";
 
 // Monthly prices are the Figma main frame; yearly ones are its "Pay Yearly"
@@ -209,12 +209,10 @@ const groups: { title: string; rows: [string, Cell, Cell, Cell][] }[] = [
                 </p>
               </div>
 
-              <a
-                href={QUALIFY_HREF}
-                class="btn btn-primary mt-6 h-14 w-full text-[17px] xl:mt-8 xl:h-[72px] xl:max-w-[328px] xl:text-[18px]"
-              >
-                {QUALIFY_LABEL}
-              </a>
+              <BookButton
+                label="Book call"
+                class="mt-6 w-full xl:mt-8 xl:h-[60px] xl:max-w-[328px]"
+              />
             </div>
 
             <div class="border-t border-[#dbdbd8] px-6 pb-7 pt-6 xl:px-[33px] xl:pb-[33px] xl:pt-[30px]">

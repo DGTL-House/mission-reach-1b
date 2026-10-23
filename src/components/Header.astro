@@ -1,5 +1,6 @@
 ---
 import { CONTACT, NAV, SOCIALS } from "../consts";
+import BookButton from "./BookButton.astro";
 import Icon from "./Icon.astro";
 import Logo from "./Logo.astro";
 
@@ -37,7 +38,11 @@ const { base = "" } = Astro.props;
           </a>
         ))
       }
-      <slot name="cta" />
+      <BookButton
+        label="Book free call"
+        note={false}
+        class="!h-12 !px-5 !text-[16px]"
+      />
     </nav>
 
     <button
@@ -94,6 +99,7 @@ const { base = "" } = Astro.props;
   </nav>
 
   <div class="mt-auto pt-12 text-center">
+    <BookButton label="Book free call" class="mb-5 w-full !h-14 !gap-0" />
     <a href={`mailto:${CONTACT.email}`} class="block text-[15px] text-body"
       >{CONTACT.email}</a
     >

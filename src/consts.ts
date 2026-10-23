@@ -1,9 +1,8 @@
-// Shared config + copy for the mission-growth landing.
+// Shared config + copy for the mission-reach landing.
 
-// Every "Check if you qualify" CTA scrolls to the eligibility quiz; only the
-// quiz's eligible result links out to the booking widget (with the answers and
-// UTM params appended).
-export const QUALIFY_HREF = "#quiz";
+// "Book …" CTAs open the booking widget directly (see BookButton.astro);
+// "Check if you qualify" CTAs scroll to the final eligibility-call block.
+export const QUALIFY_HREF = "#book";
 export const QUALIFY_LABEL = "Check if you qualify";
 export const BOOK_CALL =
   "https://api.dgtl-house.com/widget/bookings/dgtlhouse-nonprofits";
@@ -15,10 +14,7 @@ export const CONTACT = {
   address: "1635 Eagle Grove Ct., Wheeling, IL 60090",
 } as const;
 
-export const IRS_501C3_URL =
-  "https://www.irs.gov/charities-non-profits/application-for-recognition-of-exemption";
-
-// Header / mobile menu / floating pill nav.
+// Header / mobile menu / bottom pill nav.
 export const NAV = [
   { label: "Google Ad Grants", short: "Ad Grants", href: "#ad-grants" },
   { label: "How we work", short: "How we work", href: "#how-we-work" },

@@ -1,5 +1,5 @@
 ---
-import { QUALIFY_HREF, QUALIFY_LABEL } from "../consts";
+import BookButton from "./BookButton.astro";
 import Icon from "./Icon.astro";
 
 const reasons = [
@@ -32,13 +32,7 @@ const reasons = [
         Direct access to Google's resources means we deliver results others
         can't — at prices others can't match.
       </p>
-      <a
-        href={QUALIFY_HREF}
-        class="btn btn-primary btn-lg reveal mt-6 w-full sm:w-auto xl:mt-8 xl:px-6"
-      >
-        {QUALIFY_LABEL}
-        <Icon name="arrow-right" size={18} />
-      </a>
+      <BookButton class="reveal mt-6 w-full sm:w-auto xl:mt-8 xl:min-w-[306px]" />
     </div>
 
     <ul

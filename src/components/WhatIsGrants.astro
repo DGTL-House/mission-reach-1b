@@ -1,5 +1,5 @@
 ---
-import { QUALIFY_HREF, QUALIFY_LABEL } from "../consts";
+import BookButton from "./BookButton.astro";
 import Icon from "./Icon.astro";
 
 const facts = [
@@ -33,11 +33,7 @@ const facts = [
         Google Ad Grants is an official Google program. It's been running since
         2003 and has awarded over $10 billion to nonprofits worldwide.
       </p>
-      <a
-        href={QUALIFY_HREF}
-        class="btn btn-primary btn-lg reveal mt-6 w-full sm:w-auto xl:mt-8 xl:min-w-[332px]"
-        >{QUALIFY_LABEL}</a
-      >
+      <BookButton class="reveal mt-6 w-full sm:w-auto xl:mt-8 xl:min-w-[306px]" />
     </div>
 
     <ul

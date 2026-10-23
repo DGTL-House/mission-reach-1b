@@ -1,5 +1,5 @@
 ---
-import { QUALIFY_HREF, QUALIFY_LABEL } from "../consts";
+import BookButton from "./BookButton.astro";
 
 // "Ad invoice vs grant voucher" — the same $10K budget, two price tags.
 const tickets = [
@@ -43,11 +43,7 @@ const tickets = [
         gives registered 501(c)(3) nonprofits up to $10,000/month in free Search
         ads.
       </p>
-      <a
-        href={QUALIFY_HREF}
-        class="btn btn-primary btn-lg reveal mt-6 w-full sm:w-auto xl:mt-8 xl:min-w-[332px]"
-        >{QUALIFY_LABEL}</a
-      >
+      <BookButton class="reveal mt-6 w-full sm:w-auto xl:mt-8 xl:min-w-[306px]" />
     </div>
 
     <div class="reveal-stagger mt-8 grid gap-5 lg:grid-cols-2 xl:mt-8 xl:gap-8">

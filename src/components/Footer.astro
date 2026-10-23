@@ -1,14 +1,10 @@
 ---
-import { CONTACT, QUALIFY_HREF, QUALIFY_LABEL, SOCIALS } from "../consts";
+import BookButton from "./BookButton.astro";
+import { CONTACT, SOCIALS } from "../consts";
 import Icon from "./Icon.astro";
 import Logo from "./Logo.astro";
 
-interface Props {
-  // Thank-you page: two-line "Book free consultation" button back to the quiz.
-  variant?: "landing" | "thanks";
-  base?: string;
-}
-const { variant = "landing", base = "" } = Astro.props;
+
 ---
 
 <footer id="contact" class="pb-28 pt-8 lg:pb-16 xl:pb-24 xl:pt-[100px]">
@@ -22,24 +18,7 @@ const { variant = "landing", base = "" } = Astro.props;
       >
         Helping nonprofits get discovered through Google Ad Grants.
       </p>
-      {
-        variant === "thanks" ? (
-          <a
-            href={`${base}${QUALIFY_HREF}`}
-            class="btn btn-primary mt-6 h-16 w-full flex-col gap-0 leading-tight sm:w-[306px] xl:h-[72px]"
-          >
-            <span class="text-[18px]">Book free consultation</span>
-            <span class="text-[12px] font-normal">No commitment · 30 min</span>
-          </a>
-        ) : (
-          <a
-            href={`${base}${QUALIFY_HREF}`}
-            class="btn btn-primary mt-6 h-14 w-full text-[18px] sm:w-[330px]"
-          >
-            {QUALIFY_LABEL}
-          </a>
-        )
-      }
+      <BookButton class="mt-6 w-full sm:w-[306px]" />
     </div>
 
     <ul class="flex gap-3 lg:pb-2" aria-label="Social media">

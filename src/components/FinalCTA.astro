@@ -1,0 +1,74 @@
+---
+import BookButton from "./BookButton.astro";
+import Icon from "./Icon.astro";
+
+// Final CTA (1b layout): replaces the eligibility quiz. Every "Check if you
+// qualify" anchor scrolls here (#book); the button opens the booking widget.
+const onCall = [
+  "Review your nonprofit’s profile, website, and current online presence",
+  "Check your eligibility for the Google Ad Grants program.",
+  "Explain the next steps and how we can manage the process for you.",
+];
+---
+
+<section id="book" class="section" aria-labelledby="book-title">
+  <div class="container-page">
+    <div
+      class="card-cream reveal rounded-[24px] px-2 pb-6 pt-2 md:p-10 xl:rounded-[48px] xl:px-40 xl:pb-20 xl:pt-20"
+    >
+      <div
+        class="mx-auto max-w-[960px] rounded-[20px] bg-white px-5 pb-7 pt-8 shadow-[0_24px_48px_-24px_rgba(22,21,20,0.14)] md:px-10 xl:rounded-[40px] xl:px-0 xl:pb-[75px] xl:pt-[66px]"
+      >
+        <div class="mx-auto max-w-[608px]">
+          <div class="text-center">
+            <p class="eyebrow">Get started today</p>
+            <h2
+              id="book-title"
+              class="mx-auto mt-3 max-w-[260px] text-[28px] font-medium leading-[1.08] tracking-[-0.01em] text-ink sm:max-w-none xl:-mx-10 xl:mt-4 xl:whitespace-nowrap xl:text-[44px]"
+            >
+              Book your Free eligibility call
+            </h2>
+            <p
+              class="mx-auto mt-4 max-w-[300px] text-[16px] font-light leading-normal text-body sm:max-w-[600px] xl:mt-3 xl:text-[18px]"
+            >
+              Find out if your nonprofit qualifies for up to $10,000/month in
+              Google Search advertising through Google Ad Grants.
+            </p>
+          </div>
+
+          <p
+            class="mt-6 border-b border-[#e4e3de] pb-3 text-[16px] text-ink xl:mt-9"
+          >
+            On the call, we’ll
+          </p>
+          <ul class="mt-4 space-y-3 xl:mt-5 xl:space-y-[14px]">
+            {
+              onCall.map((item) => (
+                <li class="flex items-start gap-3 text-[16px] leading-snug text-ink">
+                  <Icon name="check-olive" size={16} class="mt-[3px] shrink-0" />
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+
+          <BookButton class="mt-7 w-full xl:mt-[30px]" />
+
+          <p
+            class="mx-auto mt-5 flex w-max max-w-full items-center gap-3 text-[12px] font-medium leading-snug text-ink xl:mt-6"
+          >
+            <span
+              class="grid size-9 shrink-0 place-items-center rounded-[10px] bg-blush"
+            >
+              <Icon name="warning" size={18} />
+            </span>
+            <span
+              >Please double-check the time zone before<br />booking,
+              especially if you’re using a VPN</span
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

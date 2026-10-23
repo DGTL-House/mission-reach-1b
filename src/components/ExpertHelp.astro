@@ -1,5 +1,5 @@
 ---
-import { QUALIFY_HREF, QUALIFY_LABEL } from "../consts";
+import BookButton from "./BookButton.astro";
 import Icon from "./Icon.astro";
 
 const alone = [
@@ -63,13 +63,7 @@ const withUs = [
             ))
           }
         </ul>
-        <a
-          href={QUALIFY_HREF}
-          class="btn btn-primary btn-lg mt-6 w-full sm:w-auto xl:mt-[19px] xl:px-6"
-        >
-          {QUALIFY_LABEL}
-          <Icon name="arrow-right" size={18} />
-        </a>
+        <BookButton class="mt-6 w-full sm:w-auto xl:mt-[19px] xl:min-w-[306px]" />
       </div>
     </div>
   </div>

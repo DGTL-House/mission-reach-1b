@@ -1,15 +1,18 @@
 ---
-import { BOOK_CALL, QUALIFY_HREF } from "../consts";
+import { QUALIFY_HREF } from "../consts";
 
-// Booking CTA from the 1b layout: opens the booking widget directly (UTM /
-// click-id params are appended by scripts/utm.ts). Two-line by default —
-// "<label>" over "No commitment · 30 min".
+// Booking CTA from the 1b layout. Scrolls to the final CTA (#book) by default;
+// the final CTA passes BOOK_CALL to open the booking widget (UTM / click-id
+// params are appended by scripts/utm.ts). Two-line by default — "<label>"
+// over "No commitment · 30 min".
 interface Props {
+  href?: string;
   label?: string;
   note?: boolean;
   class?: string;
 }
 const {
+  href = QUALIFY_HREF,
   label = "Book free consultation",
   note = true,
   class: className = "",
@@ -17,7 +20,7 @@ const {
 ---
 
 <a
-  href={QUALIFY_HREF}
+  href={href}
   class:list={[
     "btn btn-primary",
     note

@@ -51,7 +51,7 @@ const tickets = [
         tickets.map((t) => (
           <article
             class:list={[
-              "relative rounded-[24px] border px-6 pb-7 pt-7 xl:px-[45px] xl:pb-[38px] xl:pt-[40px]",
+              "ticket relative rounded-[24px] border px-6 pb-7 pt-7 xl:px-[45px] xl:pb-[38px] xl:pt-[40px]",
               t.voucher
                 ? "border-voucher-line bg-voucher"
                 : "border-[#e7e6e1] bg-white",
@@ -64,6 +64,7 @@ const tickets = [
               {t.title}
             </h3>
 
+            <div class="relative">
             <dl
               class:list={[
                 "mt-5 space-y-4 border-y border-t-dashed pb-6 pt-6 text-[16px] xl:mt-6 xl:space-y-[14px] xl:pb-[18px] xl:pt-[22px] xl:text-[18px]",
@@ -87,21 +88,20 @@ const tickets = [
               ))}
             </dl>
 
-            {/* Ticket notches on the tear line */}
-            <span
-              class:list={[
-                "absolute -left-[15px] top-[var(--notch)] size-[30px] rounded-full border bg-white",
-                t.voucher ? "border-voucher-line" : "border-[#e7e6e1]",
-              ]}
-              aria-hidden="true"
-            />
-            <span
-              class:list={[
-                "absolute -right-[15px] top-[var(--notch)] size-[30px] rounded-full border bg-white",
-                t.voucher ? "border-voucher-line" : "border-[#e7e6e1]",
-              ]}
-              aria-hidden="true"
-            />
+            {/* Ticket notches: page-coloured discs centred on the card edge at
+                the tear line; the card's clip-path cuts off their outer half,
+                leaving a semicircular bite outlined in the border colour. */}
+            {["notch-l", "notch-r"].map((side) => (
+              <span
+                class:list={[
+                  "notch absolute top-full size-[30px] -translate-y-1/2 rounded-full border bg-white",
+                  side,
+                  t.voucher ? "border-voucher-line" : "border-[#e7e6e1]",
+                ]}
+                aria-hidden="true"
+              />
+            ))}
+            </div>
 
             <p class="mt-6 font-mono text-[12px] font-medium uppercase tracking-[0.08em] text-body xl:text-[13px]">
               {t.totalLabel}
@@ -132,14 +132,21 @@ const tickets = [
 </section>
 
 <style>
-  article {
-    /* Notch sits on the solid tear line under the rows. */
-    --notch: 217px;
+  .ticket {
+    /* Horizontal padding + border, so the notches can sit on the card edge. */
+    --edge: 25px;
+    clip-path: inset(0 round 24px);
   }
   @media (min-width: 1280px) {
-    article {
-      --notch: 224px;
+    .ticket {
+      --edge: 46px;
     }
+  }
+  .notch-l {
+    left: calc(-1 * var(--edge) - 15px);
+  }
+  .notch-r {
+    right: calc(-1 * var(--edge) - 15px);
   }
   .border-t-dashed {
     border-top-style: dashed;

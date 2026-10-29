@@ -75,10 +75,13 @@ const benefits = [
             <Icon name="laptop" size={22} />
           </span>
           <span
-            class="flex h-12 items-center gap-2 rounded-full border border-[#dcdad3] bg-[#eeece6] px-6"
+            class="flex h-12 items-center rounded-full border border-[#dcdad3] bg-[#eeece6] px-6"
           >
-            <span class="text-[8px] text-ink">by</span>
-            <Logo class="text-[19px] text-black" />
+            <!-- "by" sits on the wordmark's baseline, not its vertical centre. -->
+            <span class="flex items-baseline gap-2">
+              <span class="text-[8px] leading-none text-ink">by</span>
+              <Logo class="text-[19px] text-black" />
+            </span>
           </span>
         </div>
         <h3
